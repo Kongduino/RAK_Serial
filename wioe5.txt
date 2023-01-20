@@ -1,0 +1,3 @@
+AT;;;OK;Attention
+AT+VER;?;;/AT\+VER=\d\.\d+\.\d+$/;Get Firmware version.
+AT+ID;/(DevAddr|DevEui|AppEui)?/;;/AT\+VER=\d\.\d+\.\d+$/;Get Firmware version.

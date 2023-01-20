@@ -1,0 +1,83 @@
+AT;;;OK;Attention
+ATE;;;;AT Command Echo
+ATZ;;;;MCU Reset
+ATR;;;;Restore default parameters.
+AT+BOOT;;;<BOOT MODE>;Go to Bootloader mode.
+AT+SN;?;;/\d{1.18}/;Get Serial number.
+AT+BAT;?;;/AT\+BAT=\d+\.\d{6}/;Get Battery level.
+AT+BUILDTIME;?;;/AT\+BUILDTIME=\d{8}-\d{6}/;Get Build time of the firmware.
+AT+REPOINFO;?;;/AT\+REPOINFO=[0-9a-f]+(:[0-9a-f]+)+/;Get Repo information.
+AT+VER;?;;/AT\+VER=3\.\d+\.\d+\S+/;Get Firmware version.
+AT+CLIVER;?;;/AT\+CLIVER=\d\.\d+\.\d+/;Get AT Command version.
+AT+APIVER;?;;/AT\+APIVER=\d\.\d+\.\d+/;Get API version.
+AT+HWMODEL;?;;/AT\+HWMODEL=\w+/;Get Hardware model.
+AT+HWID;?;;/AT\+HWID=\w+/;Get Hardware ID.
+AT+SLEEP;/\d+/;;OK;Sleep mode.
+AT+LOCK;;;OK;Lock the serial port.
+00000000;;;;Unlock the serial port.
+AT+BAUD;?;/\d+/;OK;Get and set the serial port baud rate.
+AT+PWORD;Ø;/\w{1,8}/;OK;Set the AT Command serial port password.
+AT+ATM;;;OK;Switch to AT command mode.
+AT+APM;;;OK;Switch to API command mode.
+AT+NWM;?;/[0-2]/;OK;Get and set the network working mode (0 = P2P_LORA, 1 = LoRaWAN, 2 = P2P_FSK).
+AT+PFREQ;?;/[1-9]\d{8}$/;OK;Get and set the frequency of the P2P mode.
+AT+PSF;?;/([5-9]|1[0-2])/;OK;Get and set the P2P Spreading Factor.
+AT+PBW;?;/([0-9]|\d\d\d?\d?00)/;OK;Get and set the P2P Bandwidth.
+AT+PCR;?;/[0-3]/;OK;Get and set the P2P Coding Rate.
+AT+PPL;?;/\d+/;OK;Get and set the P2P Preamble Length.
+AT+PTP;?;/([5-9]|1[0-9]|2[0-2])/;OK;Get and set the transmitting power 5-22.
+AT+PSEND;Ø;/([0-9a-fA-F][0-9a-fA-F])+/;OK;Send data in P2P mode.
+AT+PRECV;Ø;/\d+/;OK;Enter P2P RX mode for xxx ms.
+AT+P2P;?;/\d\d\d\d\d\d\d\d\d:([5-9]|1[0-2]):([0-9]|\d\d\d?\d?00):[0-3]:\d+:([5-9]|1[0-9]|2[0-2])/;OK;Get and set all P2P parameters
+AT+DEVEUI;?;/[0-9a-fA-F]{16}/;OK;Get and set the Device EUI (8 hex bytes).
+AT+APPEUI;?;/[0-9a-fA-F]{16}/;OK;Get and set the Application EUI (8 hex bytes).
+AT+APPKEY;?;/[0-9a-fA-F]{32}/;OK;Get and set the Application Key (16 hex bytes).
+AT+DEVADDR;?;/[0-9a-fA-F]{8}/;OK;Get and set the Application Address (4 hex bytes).
+AT+APPSKEY;?;/[0-9a-fA-F]{32}/;OK;Get and set the Application Session Key (16 hex bytes).
+AT+NWKSKEY;?;/[0-9a-fA-F]{32}/;OK;Get and set the Network Session Key (16 hex bytes).
+AT+NETID;?;/[0-9a-fA-F]{6}/;OK;Get and set the Network ID (NetID) (3 hex bytes).
+AT+CFM;?;/[01]/;OK;Get and set the Confirmation Mode (0 OR 1).
+AT+CFS;?;;OK;Get and set the Confirmation Status (0 OR 1).
+AT+JOIN;?;/[01]:[01]:([789]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]):([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$/;OK;Join Network.
+AT+NJM;?;/[01]/;OK;Get and set the network join mode (0 = ABP, 1 = OTAA).
+AT+NJS;?;;OK;Get the network join status (0 = not joined, 1 = joined).
+AT+RECV;?;;/AT\+RECV=\d+:([0-9a-fA-F][0-9a-fA-F])+/;Print the last received data in hex format.
+AT+SEND;Ø;/\d+:([0-9a-fA-F][0-9a-fA-F])+/;OK;Send data along with the application port.
+AT+LPSEND;Ø;/\d+:[01]:([0-9a-fA-F][0-9a-fA-F])+/;OK;Send long packet data (1,000 bytes max).
+AT+RETY;?;/[0-7]/;OK;Set the number of retransmissions of confirmed packet data.
+AT+ADR;?;/[01]/;OK;Get and set the adaptive data rate setting (0 = off, 1 = on).
+AT+CLASS;?;/[ABC]/;OK;Get and set the device class (Class A, B or C).
+AT+DCS;?;/[01]/;OK;Get and set the ETSI duty cycle setting (0 = disabled, 1 = enabled).
+AT+DR;?;/[0-7]/;OK;Get and set the data rate.
+AT+JN1DL;?;Ø;/([1-9]|1[0-4])/;Get and set the Join delay on RX window 1.
+AT+JN2DL;?;Ø;/([1-9]|1[0-4])/;Get and set the Join delay on RX window 2.
+AT+PNM;?;/[01]/;OK;Get and set the public network mode (0 = off, 1 = on).
+AT+RX1DL;?;Ø;/([1-9]|1[0-4])/;Get and set the Delay of the received window 1.
+AT+RX2DL;?;Ø;/([1-9]|1[0-4])/;Get and set the Delay of the received window 2.
+AT+RX2DR;?;Ø;/(\[0,1,2,3,4,5,6,7\]|\[8,9,10,11,12,13\])/;Get and set the RX2 window data rate.
+AT+RX2FQ;?;Ø;/[1-9]\d{8}$/;Get the Rx2 window frequency (Hz).
+AT+TXP;?;/([0-9]|1[0-4])/;OK;Get and set the transmitting power (0-5, 0-7, 0-10, 0-14 depending on region).
+AT+LINKCHECK;?;/[012]/;OK;Get and set the link check setting (0 = disabled, 1 = once, 2 = every time).
+AT+RSSI;?;;OK;Get the RSSI of the last received packet.
+AT+ARSSI;?;;OK;Get the RSSI of all open channels.
+AT+SNR;?;;OK;Get the SNR of the last received packet.
+AT+PGSLOT;?;/[0-7]/;OK;Get and set the unicast ping slot periodicity (0-7).
+AT+BFREQ;?;;/BCON: [0-7], \d+/;Get the data rate and beacon frequency (MHz).
+AT+BTIME;?;;/BTIME: \d+/;Get the beacon time (seconds since GPS Epoch time).
+AT+BGW;?;;/BGW: \d+, "\w+", "\w+", "\w+", "\w+"/;Get the gateway GPS coordinates, NetID and GwID.
+AT+LTIME;?;;/LTIME: \d\dh\d\dm\d\ds \d\d\d\d-\d\d-\d\d/;Get the local time.
+AT+MASK;?;/(000[01248]|00[1248]0|0[1248]00)/;OK;Get and set the channel mask to close or open the channel (only for US915, AU915, CN470).
+AT+CHE;?;/\d+:\d+:\d+:\d+/;OK;Get and set eight channels mode (only for US915 AU915 CN470).
+AT+CHS;?;/0|([1-9]\d{8})$/;OK;Get and set single channels mode (only for US915 AU915 CN470).
+AT+BAND;?;/([0-9]|1[01])$/;OK;Get and set the active region (0 = EU433, 1 = CN470, 2 = RU864, 3 = IN865, 4 = EU868, 5 = US915, 6 = AU915, 7 = KR920, 8 = AS923-1, 9 = AS923-2, 10 = AS923-3, 11 = AS923-4),
+AT+ADDMULC;Ø;/[ABC]:\w{8}:\w{32}:\w{32}:([1-9]\d{8}):\d+:\d+/;OK;Add a new multicast group.
+AT+RMVMULC;Ø;/\w{8}/;OK;Delete a multicast group.
+AT+LSTMULC;?;;/[ABC]:\w{8}:\w{32}:\w{32}:([1-9]\d{8}):\d+:\d+/;List a multicast group.
+AT+TRSSI;;Ø;/RSSI Value -\d+ dBm/;Get RF RSSI tone test RSSI.
+AT+TTONE;;Ø;/RSSI Value -\d+ dBm/;Start RF RSSI tone test.
+AT+TTX;Ø;/\d+/;/RSSI Value -\d+ dBm/;Set number of packets to be sent for PER RF TX test.
+AT+TRX;Ø;/\d+/;/RSSI Value -\d+ dBm/;Set number of packets to be sent for PER RF RX test.
+AT+TCONF;?;/[1-9]\d{8}:\d+:\d+:\d+:\d+:\d+:\d+:\d+:\d+:\d+:\d+:\d+/;/AT+TCONF=[1-9]\d{8}:\d+:\d+:\d+:\d+:\d+:\d+:\d+:\d+:\d+:\d+:\d+/;Configure LoRa RF test. <Freq>:<Power>:<Bandwidth>:<SpreadingFactor>:<CodingRate>:<LNA>:<PABoost>:<Modulation>:<PayloadLen>:<FskDeviation>:<LowDRopt>:<BTproduct>
+AT+TTH;?;/[1-9]\d{8}:[1-9]\d{8}:\d+000:\d+/;OK;Start RF Tx hopping test from Fstart to Fstop, with Fdelta steps. <Fstart>:<Fstop>:<FDelta>:<PacketNb>
+AT+TOFF;;Ø;OK;Stop RF RSSI tone test.
+AT+CERTIF;Ø;Ø;OK;Set the module in LoRaWAN Certification mode (0 = normal mode, 1 = certification mode).

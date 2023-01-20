@@ -1,0 +1,27 @@
+AT+GET_CONFIG;R;;;Show the system's configuration.
+AT+BAUDRATE;RW;/\d{2,3}00/;OK;Get and set the serial port baud rate.
+AT+DATABIT;RW;/[78]/;OK;Get and set the serial port data bit setting.
+AT+STOPBIT;RW;/(1|1\.5|2)/;OK;Get and set the serial port stop bit setting.
+AT+PARITY;RW;/(NONE|EVEN|ODD)/;OK;Get and set the serial port stop parity setting.
+AT+DTUMODE;RW;/(P2P|MODBUS)/;OK;Get and set the device operating mode.
+AT+MODBUSTIMEOUT;RW;/\d+/;OK;Get and set the Modbus timeout setting.
+AT+TRANSPARENT;RW;/[01]/;OK;Get and set the Modbus transmission mode (0: non-transparent mode, 1: transparent mode).
+AT+MODBUSRETRY;RW;/[0-8]/;OK;Get and set the Modbus retries setting.
+AT+ENABLEPOLL;RW;/[01]/;OK;Get and set the Modbus polling mode (0: disabled, 1: enabled).
+AT+POLLPERIOD;RW;/\d+/;OK;Get and set the Modbus polling cycle.
+AT+ADDPOLL;W;/([1-9]|[1-9][0-9]|1[01][09]|12[0-7]):([0-9a-fA-F][0-9a-fA-F])+/;OK;Add a polling instruction. <n>:<data>
+AT+RMPOLL;W;/([1-9]|[1-9][0-9]|1[01][09]|12[0-7])$/;OK;Remove a polling instruction.
+AT+ADDSCHEDULETASK;W;/([1-9]|[1-9][0-9]|1[01][09]|12[0-7]):(WEEK\DAY\HOUR):[0-6]:([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]:([0-9a-fA-F][0-9a-fA-F])+/;OK;Schedule an instruction. <id>:<type>:<w>:<h>:<m>:<s>:<data>
+AT+RMSCHEDULETASK;W;/([1-9]|[1-9][0-9]|1[01][09]|12[0-7])$/;OK;Remove an instruction.
+AT+VERSION;R;;/\d\.\d\.\d\d\d/;Get AT Command version.
+AT+SYSLOGLVL;RW;/[0-6]/;OK;Read or set the system log level.
+AT+ECHO;W;/[01]/;OK;Turns on/off local echo.
+AT+BOOT;W;;<BOOT MODE>;Go to Bootloader mode.
+AT+RESTART;W;;;Restart the device.
+AT+FACTORY;W;;;Restore device to default factory settings.
+AT+SYSTIME;R;;;Show the system's running time.
+AT+SYSINFO;R;;;Show the system information of the device. <model> <sn> <version> <vendor> <copyright>
+AT+WAKEUPBYTE;RW;/[0-9a-fA-F][0-9a-fA-F]/;OK;Get and set the wake up byte. Default value is 0xAA.
+
+
+

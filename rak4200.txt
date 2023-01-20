@@ -1,0 +1,8 @@
+help;R;;OK;Show all available AT commands.;at+
+version;R;;OK;Get the current firmware version number.;at+
+work_mode;RW;/[012]/;OK;Set work mode;at+set_config=lora:
+status;R;;OK;Get all information about the device’s hardware components and current status.;at+get_config=device:
+restart;R;;OK;Reboot device.;at+set_config=device:
+boot;R;;OK;Put the device in boot mode.;at+set_config=device:
+run;R;;OK;Put the device in boot mode.;at+
+sleep;W;/\d/;OK;Put the device in sleep mode (1) or wake up device (0).;at+set_config=device:
